@@ -1,4 +1,7 @@
 version: 1
+proxy:
+  upload-artifacts: yes
+  logs: yes
 
 phases:
     install:
