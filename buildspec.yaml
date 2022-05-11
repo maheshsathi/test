@@ -7,7 +7,7 @@ phases:
     pre_build:
         commands:
             - yum install -y yum-utils
-            - yum-builddep python3
+            - yum-builddep -y python3
             - yum install python3
             - pip install requirements.txt
             - echo "terraform login"
