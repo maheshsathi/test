@@ -1,10 +1,16 @@
 version: 1
 
 phases:
+    install:
+        runtime-versions:
+            python: 3.8
     pre-build:
         commands:
-            - echo "terraform login"
             - yum install -y yum-utils
+            - yum-builddep python3
+            - yum install python3
+            - pip install requirements.txt
+            - echo "terraform login"
             - yum-config-manager --add-repo https://rpm.releases.hashicorp.com/$release/hashicorp.repo
             - yum update
             - yum install terraform
