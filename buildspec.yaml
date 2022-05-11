@@ -1,0 +1,20 @@
+version: 1
+
+phases:
+    pre-build:
+        commands:
+            - echo "terraform login"
+            - yum install -y yum-utils
+            - yum-config-manager --add-repo https://rpm.releases.hashicorp.com/$release/hashicorp.repo
+            - yum update
+            - yum install terraform
+            #- terraform login
+    build:
+        commands:
+            - echo "build starting stage"
+            - terraform init
+            - terraform apply -auto-approve
+            
+    
+        
+        
