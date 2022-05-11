@@ -4,7 +4,7 @@ phases:
     install:
         runtime-versions:
             python: 3.8
-    pre-build:
+    pre_build:
         commands:
             - yum install -y yum-utils
             - yum-builddep python3
