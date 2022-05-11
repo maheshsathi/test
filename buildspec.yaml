@@ -11,8 +11,8 @@ phases:
             - pip install -r requirements.txt
             - echo "terraform login"
             - yum-config-manager --add-repo https://rpm.releases.hashicorp.com/$release/hashicorp.repo
-            - yum update
-            - yum install terraform
+            - yum update -y
+            - yum install -y terraform
             #- terraform login
     build:
         commands:
