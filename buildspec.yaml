@@ -8,8 +8,7 @@ phases:
         commands:
             - yum install -y yum-utils
             - yum-builddep -y python3
-            - yum install python3
-            - pip install requirements.txt
+            - pip install -r requirements.txt
             - echo "terraform login"
             - yum-config-manager --add-repo https://rpm.releases.hashicorp.com/$release/hashicorp.repo
             - yum update
